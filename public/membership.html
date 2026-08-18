@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Абонементы - Бассейн «Политехник»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<nav class="app-nav">
+  <div class="logo-slot">
+      <img src="logo_black.png" alt="логотип бассейна «Политехник»">
+  </div>
+  <a href="/account.html">Кабинет</a>
+  <a href="/membership.html">Абонементы</a>
+  <span class="app-user" data-user-name></span>
+  <button class="btn" data-logout>Выйти</button>
+</nav>
+
+<main class="app-page">
+
+  <section>
+    <h2>Оформить абонемент</h2>
+    <p class="muted">
+      Выберите тариф - мы покажем QR-код для перевода. После оплаты
+      сотрудник сверит поступление и активирует абонемент.
+    </p>
+
+    <p data-message hidden></p>
+
+    <div data-plans class="cards">
+      <p class="muted">Загрузка тарифов…</p>
+    </div>
+  </section>
+
+  <!---------- Экран с QR появляется после выбора тарифа ---------->
+  <section data-qr-section hidden>
+    <h2>Оплата</h2>
+    <div class="qr-block">
+      <img data-qr-image alt="QR-код для оплаты" class="qr-image">
+      <div class="qr-info">
+        <p><strong data-qr-plan></strong></p>
+        <p class="qr-amount" data-qr-amount></p>
+        <p class="muted">Код для назначения платежа:</p>
+        <p class="qr-reference" data-qr-reference></p>
+        <p class="muted">
+          Отсканируйте QR в приложении банка. Обязательно сохраните код
+          в назначении платежа - по нему сотрудник найдёт ваш перевод.
+        </p>
+        <button class="btn" data-qr-close>Готово</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>История платежей</h2>
+    <div data-payments class="table-wrap">
+      <p class="muted">Загрузка…</p>
+    </div>
+  </section>
+
+</main>
+
+<script type="module" src="/js/membership.js"></script>
+</body>
+</html>

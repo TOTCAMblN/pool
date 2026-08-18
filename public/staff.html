@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кабинет сотрудника - Бассейн «Политехник»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<nav class="app-nav">
+  <div class="logo-slot">
+      <img src="logo_black.png" alt="логотип бассейна «Политехник»">
+  </div>
+  <button class="tab" data-tab="overview">Обзор</button>
+  <button class="tab" data-tab="payments">Платежи</button>
+  <button class="tab" data-tab="schedule">Расписание</button>
+  <button class="tab" data-tab="booking">Записать клиента</button>
+  <button class="tab" data-tab="news">Новости</button>
+  <span class="app-user" data-user-name></span>
+  <button class="btn" data-logout>Выйти</button>
+</nav>
+
+<main class="app-page">
+
+  <p data-message hidden></p>
+
+  <!-- ОБЗОР -->
+  <section data-panel="overview">
+    <div data-overview-cards class="cards"></div>
+    <h2>Занятия сегодня</h2>
+    <div data-today class="table-wrap"><p class="muted">Загрузка…</p></div>
+  </section>
+
+  <!-- ПЛАТЕЖИ -->
+  <section data-panel="payments" hidden>
+    <h2>Платежи на подтверждение</h2>
+    <p class="muted">
+      Сверьте код в назначении перевода с банковской выпиской, затем
+      подтвердите. Абонемент активируется автоматически.
+    </p>
+    <div data-payments class="table-wrap"><p class="muted">Загрузка…</p></div>
+  </section>
+
+  <!-- РАСПИСАНИЕ -->
+  <section data-panel="schedule" hidden>
+    <h2>Добавить занятие</h2>
+    <form data-session-form class="inline-form">
+      <label class="field">
+        <span>Вид занятия</span>
+        <select name="serviceId" required></select>
+      </label>
+      <label class="field">
+        <span>Тренер</span>
+        <select name="trainerId" required></select>
+      </label>
+      <label class="field">
+        <span>Дата и время</span>
+        <input type="datetime-local" name="startTime" required>
+      </label>
+      <button type="submit" class="btn btn--primary">Добавить</button>
+    </form>
+
+    <h2>Ближайшие занятия</h2>
+    <div data-schedule class="table-wrap"><p class="muted">Загрузка…</p></div>
+  </section>
+
+  <!-- ЗАПИСЬ КЛИЕНТА -->
+  <section data-panel="booking" hidden>
+    <h2>Записать клиента</h2>
+
+    <label class="field field--inline">
+      <span>Поиск по имени или email</span>
+      <input type="search" data-client-search placeholder="Минимум 2 символа">
+    </label>
+
+    <ul data-client-results class="results" hidden></ul>
+
+    <div data-selected-client hidden>
+      <div class="selected-head">
+        <strong data-client-name></strong>
+        <span class="muted" data-client-email></span>
+      </div>
+
+      <label class="field field--inline">
+        <span>Списать визит с абонемента</span>
+        <select data-client-membership></select>
+      </label>
+
+      <div data-booking-sessions class="table-wrap"></div>
+    </div>
+  </section>
+
+  <!-- НОВОСТИ -->
+  <section data-panel="news" hidden>
+  <h2>Добавить новость</h2>
+ 
+  <form data-news-form class="inline-form" enctype="multipart/form-data">
+    <label class="field">
+      <span>Заголовок</span>
+      <input type="text" name="title" required>
+    </label>
+    <label class="field">
+      <span>Короткое описание</span>
+      <input type="text" name="excerpt" placeholder="Для карточки на лендинге">
+    </label>
+    <label class="field">
+      <span>Картинка</span>
+      <input type="file" name="image" accept="image/jpeg,image/png,image/webp">
+    </label>
+    <label class="field" style="grid-column:1/-1">
+      <span>Текст новости</span>
+      <textarea name="body" rows="4" required></textarea>
+    </label>
+    <button type="submit" class="btn btn--primary">Опубликовать</button>
+  </form>
+ 
+  <h2>Опубликованные новости</h2>
+  <div data-news-list class="table-wrap"><p class="muted">Загрузка…</p></div>
+</section>
+
+</main>
+
+<script type="module" src="/js/staff.js"></script>
+</body>
+</html>

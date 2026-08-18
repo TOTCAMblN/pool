@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Личный кабинет - Бассейн «Политехник»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<nav class="app-nav">
+  <div class="logo-slot">
+      <img src="logo_black.png" alt="логотип бассейна «Политехник»">
+  </div>
+  <a href="account.html">Кабинет</a>
+  <a href="membership.html">Абонементы</a>
+  <span class="app-user" data-user-name></span>
+  <button class="btn" data-logout>Выйти</button>
+</nav>
+
+<main class="app-page">
+
+  <section>
+    <h2>Мои абонементы</h2>
+    <div data-memberships class="cards">
+      <p class="muted">Загрузка…</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Запись на занятие</h2>
+
+    <label class="field field--inline">
+      <span>Списывать визит с абонемента</span>
+      <select data-membership-select></select>
+    </label>
+
+    <p data-message hidden></p>
+
+    <div data-sessions class="table-wrap">
+      <p class="muted">Загрузка расписания…</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Мои записи</h2>
+    <div data-bookings class="table-wrap">
+      <p class="muted">Загрузка…</p>
+    </div>
+  </section>
+
+</main>
+
+<script type="module" src="js/account.js"></script>
+</body>
+</html>

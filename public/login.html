@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вход - Бассейн «Политехник»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<main class="auth-page">
+  <div class="auth-card">
+    <div class="logo-slot">
+      <img src="logo_black.png" alt="логотип бассейна «Политехник»">
+    </div>
+    <h1 class="auth-title">Вход в личный кабинет</h1>
+
+    <form data-auth-form="login" class="auth-form" novalidate>
+      <label class="auth-field">
+        <span>Email</span>
+        <input type="email" name="email" autocomplete="email" required>
+      </label>
+
+      <label class="auth-field">
+        <span>Пароль</span>
+        <input type="password" name="password" autocomplete="current-password" required>
+      </label>
+
+      <p data-message hidden></p>
+
+      <button type="submit" class="btn btn--primary">Войти</button>
+    </form>
+
+    <p class="auth-alt">
+      Нет аккаунта? <a href="register.html">Зарегистрироваться</a>
+    </p>
+  </div>
+</main>
+
+<script type="module" src="js/auth.js"></script>
+</body>
+</html>

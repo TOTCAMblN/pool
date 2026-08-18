@@ -1,0 +1,560 @@
+/*---------- Вход ----------*/
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: var(--tile);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border: 1px solid var(--tile-line);
+  border-top: 4px solid var(--orange);
+  padding: clamp(28px, 5vw, 44px);
+}
+
+.auth-card .logo-slot {
+  margin-bottom: 26px;
+  text-decoration: none;
+}
+
+.auth-title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: -0.015em;
+  margin-bottom: 26px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.auth-field,
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.auth-field > span,
+.field > span {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.auth-field input,
+.field input,
+.field select {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--tile-line);
+  border-radius: 2px;
+  background: #fff;
+  transition: border-color 0.18s ease;
+}
+
+.auth-field input:focus,
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+
+.auth-field small {
+  font-size: 12px;
+  color: var(--ink-mute);
+}
+
+.auth-alt {
+  margin-top: 22px;
+  font-size: 14px;
+  color: var(--ink-mute);
+  text-align: center;
+}
+
+.auth-alt a {
+  color: var(--orange);
+  font-weight: 500;
+}
+
+/* ---------- Кнопки ---------- */
+
+.btn {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 11px 22px;
+  border: 1.5px solid var(--ink);
+  border-radius: 2px;
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--ink);
+  color: #fff;
+}
+
+.btn--primary {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--orange-deep);
+  border-color: var(--orange-deep);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ---------- Навигация ---------- */
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 clamp(16px, 4vw, 40px);
+  min-height: 64px;
+  background: #fff;
+  border-bottom: 1px solid var(--tile-line);
+  flex-wrap: wrap;
+}
+
+.app-nav .logo-slot {
+  text-decoration: none;
+  width: 100px;
+  height: 34px;
+}
+
+.app-nav a:not(.logo-slot) {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.app-nav a:not(.logo-slot):hover {
+  border-color: var(--orange);
+}
+
+.app-nav-title {
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.app-user {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--ink-mute);
+}
+
+/* ---------- Страница ---------- */
+
+body:has(.app-nav) {
+  background: var(--tile);
+}
+
+.app-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 40px) clamp(16px, 4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.app-page h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 19px;
+  margin-bottom: 16px;
+}
+
+.muted {
+  font-size: 14px;
+  color: var(--ink-mute);
+}
+
+.danger {
+  color: #c0392b;
+}
+
+.field--inline {
+  max-width: 380px;
+  margin-bottom: 16px;
+}
+
+/* ---------- Карточки ---------- */
+
+.cards {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid var(--tile-line);
+  border-left: 3px solid var(--orange);
+  font-size: 14px;
+}
+
+.card strong {
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.card small {
+  font-size: 12px;
+}
+
+/* ---------- Таблицы ---------- */
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--tile-line);
+  font-size: 14px;
+  min-width: 560px;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--tile-line);
+}
+
+.table thead th {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  border-bottom: 2px solid var(--ink);
+}
+
+/* ---------- Списки ---------- */
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  background: #fff;
+  border: 1px solid var(--tile-line);
+  border-left: 3px solid var(--orange);
+  flex-wrap: wrap;
+}
+
+.list-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 14px;
+}
+
+.list-item-info strong {
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* ---------- Сообщения ---------- */
+
+.message {
+  font-size: 14px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  border-left: 3px solid;
+}
+
+.message--error {
+  color: #c0392b;
+  background: #fdf0ee;
+  border-color: #c0392b;
+}
+
+.message--success {
+  color: #1e7a3c;
+  background: #eefaf1;
+  border-color: #1e7a3c;
+}
+
+/* ---------- Вкладки в кабинете сотрудника ---------- */
+
+.tab {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.tab:hover {
+  border-color: var(--tile-line);
+}
+
+.tab--active {
+  border-color: var(--orange);
+  font-weight: 600;
+}
+
+/* ---------- Статистика ---------- */
+
+.card--stat {
+  gap: 2px;
+}
+
+.stat-value {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* ---------- Форма в одну строку ---------- */
+
+.inline-form {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  align-items: end;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid var(--tile-line);
+  margin-bottom: 24px;
+}
+
+/* ---------- Результаты поиска ---------- */
+
+.results {
+  list-style: none;
+  border: 1px solid var(--tile-line);
+  background: #fff;
+  max-width: 480px;
+  margin-bottom: 20px;
+}
+
+.result-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--tile-line);
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.result-btn:hover {
+  background: var(--tile);
+}
+
+.result-btn strong {
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.result-empty {
+  padding: 12px 14px;
+  font-size: 13px;
+}
+
+.selected-head {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid var(--tile-line);
+  border-left: 3px solid var(--orange);
+  margin-bottom: 18px;
+}
+
+.selected-head strong {
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ---------- Таблицы: доп. классы ---------- */
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.table .btn {
+  font-size: 13px;
+  padding: 7px 14px;
+}
+
+.amount {
+  font-family: var(--display);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ref {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 13px;
+  background: var(--tile);
+  padding: 3px 7px;
+  border-radius: 2px;
+}
+
+.table td small {
+  display: block;
+  font-size: 12px;
+}
+
+/* ---------- Статусы ---------- */
+
+.status {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.status--booked,
+.status--pending {
+  background: var(--tile);
+  color: var(--ink-mute);
+}
+
+.status--attended,
+.status--succeeded {
+  background: #eefaf1;
+  color: #1e7a3c;
+}
+
+.status--no_show,
+.status--cancelled {
+  background: #fdf0ee;
+  color: #c0392b;
+}
+
+/* ---------- Оплата по QR ---------- */
+
+.plan-price {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card .btn {
+  margin-top: 10px;
+  align-self: flex-start;
+}
+
+.qr-block {
+  display: flex;
+  gap: 28px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--tile-line);
+  border-top: 3px solid var(--orange);
+  flex-wrap: wrap;
+}
+
+.qr-image {
+  width: 220px;
+  height: 220px;
+  flex: none;
+  border: 1px solid var(--tile-line);
+}
+
+.qr-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  max-width: 380px;
+}
+
+.qr-info strong {
+  font-family: var(--display);
+  font-size: 17px;
+}
+
+.qr-amount {
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--orange);
+}
+
+.qr-reference {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  background: var(--tile);
+  padding: 10px 14px;
+  border: 1px dashed var(--orange);
+  align-self: flex-start;
+}
+
+.qr-info .btn {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+/* ---------- Прочее ---------- */
+
+.list-item--muted {
+  border-left-color: var(--tile-line);
+  opacity: 0.75;
+}
+
+.back-btn {
+  margin-bottom: 16px;
+}

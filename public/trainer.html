@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мои занятия - Бассейн «Политехник»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<nav class="app-nav">
+  <div class="logo-slot">
+      <img src="logo_black.png" alt="логотип бассейна «Политехник»">
+  </div>
+  <span class="app-nav-title">Мои занятия</span>
+  <span class="app-user" data-user-name></span>
+  <button class="btn" data-logout>Выйти</button>
+</nav>
+
+<main class="app-page">
+
+  <p data-message hidden></p>
+
+  <!---------- Список занятий ---------->
+  <section data-sessions-view>
+    <h2>Предстоящие</h2>
+    <div data-upcoming><p class="muted">Загрузка…</p></div>
+
+    <h2>Прошедшие</h2>
+    <div data-past></div>
+  </section>
+
+  <!---------- Список записанных на выбранное занятие ---------->
+  <section data-roster-view hidden>
+    <button class="btn back-btn" data-back>← К списку занятий</button>
+
+    <h2 data-roster-title></h2>
+    <p class="muted" data-roster-meta></p>
+
+    <div data-roster class="table-wrap"></div>
+  </section>
+
+</main>
+
+<script type="module" src="js/trainer.js"></script>
+</body>
+</html>
